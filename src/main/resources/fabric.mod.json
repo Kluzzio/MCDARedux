@@ -1,14 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "mcda",
+  "id": "set_set_set",
   "version": "${version}",
-  "name": "MC Dungeons Armors",
-  "description": "Bringing the armour of Minecraft Dungeons to Minecraft",
+  "name": "Set Set Set",
+  "description": "Set the Sets of Armor Sets, thus set, set, set and perform operations off of it :)",
   "authors": [
     "Chronosacaria",
     "Kluzzio",
-    "SeaOfPixels (Art)",
-    "SattesKrokodil (Art)",
     "Patreons (Support)"
   ],
   "contact": {
@@ -21,19 +19,17 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "chronosacaria.mcda.client.McdaClient"
     ],
     "main": [
-      "chronosacaria.mcda.Mcda"
+      "timefall.set_set_set.SetSetSet"
     ]
   },
   "mixins": [
-    "mcda.mixins.json"
+    "set_set_set.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",
-    "minecraft": "1.19.*",
-    "cloth-config2": ">=6.1.48"
+    "minecraft": ">=1.19.3"
   }
 }
