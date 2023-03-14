@@ -20,7 +20,7 @@ public class PlayerEntityMixin {
     public void tickArmorEffect(CallbackInfo ci) {
         PlayerEntity player = (PlayerEntity) (Object) this;
 
-        //
+        // Testing stuffs
 
         Collection<Item> armorItems = new ArrayList<>();
         player.getArmorItems().forEach(itemStack -> armorItems.add(itemStack.getItem()));

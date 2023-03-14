@@ -1,8 +1,13 @@
 package timefall.set_set_set.mixin;
 
+import dev.emi.trinkets.api.SlotReference;
+import dev.emi.trinkets.api.Trinket;
+import dev.emi.trinkets.api.TrinketsApi;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.util.Pair;
 import org.spongepowered.asm.mixin.Unique;
 import timefall.set_set_set.SetSetSet;
+import timefall.set_set_set.registry.ArmorSetRegistry;
 import timefall.set_set_set.stsol.*;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
@@ -12,6 +17,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import timefall.set_set_set.util.SetSetsOfNonSets;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -28,6 +34,14 @@ public class LivingEntityMixin implements ISetWearingEntity {
 
         for (Item armorItem : ArmorSetRegistry.ARMOR_SET.get(SetSetSet.ID("grim_armor")).getArmorValues())
             livingEntity.dropItem(armorItem);
+
+        if (TrinketsApi.getTrinketComponent(livingEntity).isPresent())
+            for (Pair<SlotReference, ItemStack> trinketPairs : TrinketsApi.getTrinketComponent(livingEntity).get().getAllEquipped()) {
+                Item trinketItem = trinketPairs.getRight().getItem();
+                if (trinketItem instanceof Trinket trinket) {
+
+                }
+            }
     }
 
     @Unique

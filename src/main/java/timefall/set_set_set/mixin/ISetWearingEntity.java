@@ -1,6 +1,7 @@
-package timefall.set_set_set.stsol;
+package timefall.set_set_set.mixin;
 
 import net.minecraft.item.ItemStack;
+import timefall.set_set_set.stsol.ArmorSet;
 
 import java.util.HashMap;
 

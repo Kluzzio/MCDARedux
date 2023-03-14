@@ -1,4 +1,6 @@
-package timefall.set_set_set.stsol;
+package timefall.set_set_set.mixin;
+
+import timefall.set_set_set.stsol.ArmorSet;
 
 public interface IArmorWithSet {
 

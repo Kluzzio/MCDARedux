@@ -6,6 +6,7 @@ import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
+import timefall.set_set_set.util.SetSetsOfNonSets;
 
 import java.util.Collection;
 import java.util.EnumMap;

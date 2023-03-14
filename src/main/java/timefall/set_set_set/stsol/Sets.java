@@ -1,11 +1,13 @@
 package timefall.set_set_set.stsol;
 
 import timefall.set_set_set.SetSetSet;
+import timefall.set_set_set.registry.ArmorSetRegistry;
 import timefall.set_set_set.util.ArmorSetBuilder;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import timefall.set_set_set.util.SetSetsOfNonSets;
 
 public class Sets {
 
