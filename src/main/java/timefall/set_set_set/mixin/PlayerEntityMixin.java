@@ -1,6 +1,5 @@
 package timefall.set_set_set.mixin;
 
-import timefall.set_set_set.stsol.Sets;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
@@ -9,6 +8,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import timefall.set_set_set.stsol.Sets;
 
 import java.util.ArrayList;
 import java.util.Collection;

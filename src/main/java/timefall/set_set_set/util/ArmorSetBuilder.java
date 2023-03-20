@@ -1,11 +1,13 @@
 package timefall.set_set_set.util;
 
-import timefall.set_set_set.SetSetSet;
-import timefall.set_set_set.stsol.ArmorSet;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import timefall.set_set_set.SetSetSet;
+import timefall.set_set_set.stsol.ArmorSet;
 
 import java.util.Arrays;
 import java.util.LinkedList;
