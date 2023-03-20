@@ -6,12 +6,14 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import timefall.set_set_set.util.SetSetsOfNonSets;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumMap;
+import java.util.HashMap;
 
 public class ArmorSet extends EquipmentSet {
     private final ArmorMaterial armorMaterial;
@@ -20,6 +22,7 @@ public class ArmorSet extends EquipmentSet {
     private EquipmentSlot[] slots;
 
     private final ItemGroup group;
+    private final HashMap<Integer, Text> EFFECT_TOOLTIP = new HashMap<>();
 
     public ArmorSet(Identifier identifier, ArmorMaterial armorMaterial, EquipmentSlot... slots) {
         this(identifier, armorMaterial, ItemGroups.COMBAT, slots);
@@ -111,5 +114,22 @@ public class ArmorSet extends EquipmentSet {
 
     private static ArmorItem registerArmorItem(Identifier id, ArmorItem item) {
         return Registry.register(Registries.ITEM, id, item);
+    }
+
+    public int getMaxContribution() {
+        return this.getArmorSlots().size();
+    }
+
+    public Text getTooltipFromContribution(int i) {
+        return getEFFECT_TOOLTIP().get(i);
+    }
+
+    public HashMap<Integer, Text> getEFFECT_TOOLTIP() {
+        return this.EFFECT_TOOLTIP;
+    }
+
+    public ArmorSet setEffectToolTips(int threshold, String translationKey) {
+        getEFFECT_TOOLTIP().put(threshold, Text.translatable(translationKey));
+        return this;
     }
 }

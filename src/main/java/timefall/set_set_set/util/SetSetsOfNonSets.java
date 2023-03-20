@@ -3,9 +3,9 @@ package timefall.set_set_set.util;
 import dev.emi.trinkets.api.TrinketItem;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
-import timefall.set_set_set.mixin.IArmorWithSet;
-import timefall.set_set_set.mixin.compat.ITrinketWithSet;
 import timefall.set_set_set.stsol.ArmorSet;
+import timefall.set_set_set.stsol.IArmorWithSet;
+import timefall.set_set_set.stsol.ITrinketWithSet;
 
 public class SetSetsOfNonSets {
 

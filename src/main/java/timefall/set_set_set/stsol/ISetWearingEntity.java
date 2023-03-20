@@ -1,9 +1,8 @@
-package timefall.set_set_set.mixin;
+package timefall.set_set_set.stsol;
 
 import dev.emi.trinkets.api.SlotReference;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Pair;
-import timefall.set_set_set.stsol.ArmorSet;
 
 import java.util.HashMap;
 import java.util.List;

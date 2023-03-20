@@ -1,8 +1,8 @@
 package timefall.set_set_set.util;
 
 import net.minecraft.entity.LivingEntity;
-import timefall.set_set_set.mixin.ISetWearingEntity;
 import timefall.set_set_set.stsol.ArmorSet;
+import timefall.set_set_set.stsol.ISetWearingEntity;
 
 import java.util.HashMap;
 

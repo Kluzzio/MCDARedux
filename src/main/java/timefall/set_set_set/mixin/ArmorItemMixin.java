@@ -1,9 +1,10 @@
 package timefall.set_set_set.mixin;
 
-import timefall.set_set_set.stsol.ArmorSet;
 import net.minecraft.item.ArmorItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
+import timefall.set_set_set.stsol.ArmorSet;
+import timefall.set_set_set.stsol.IArmorWithSet;
 
 @Mixin(ArmorItem.class)
 public class ArmorItemMixin implements IArmorWithSet {

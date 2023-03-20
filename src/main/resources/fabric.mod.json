@@ -19,6 +19,7 @@
   "environment": "*",
   "entrypoints": {
     "client": [
+      "timefall.set_set_set.client.SetSetSetClient"
     ],
     "main": [
       "timefall.set_set_set.SetSetSet"

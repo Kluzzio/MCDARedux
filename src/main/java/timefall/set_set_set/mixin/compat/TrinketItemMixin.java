@@ -4,6 +4,7 @@ import dev.emi.trinkets.api.TrinketItem;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import timefall.set_set_set.stsol.ArmorSet;
+import timefall.set_set_set.stsol.ITrinketWithSet;
 
 @Mixin(TrinketItem.class)
 public class TrinketItemMixin implements ITrinketWithSet {

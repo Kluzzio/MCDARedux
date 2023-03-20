@@ -1,6 +1,4 @@
-package timefall.set_set_set.mixin.compat;
-
-import timefall.set_set_set.stsol.ArmorSet;
+package timefall.set_set_set.stsol;
 
 public interface ITrinketWithSet {
 
