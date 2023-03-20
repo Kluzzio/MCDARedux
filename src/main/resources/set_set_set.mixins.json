@@ -6,7 +6,8 @@
   "mixins": [
     "ArmorItemMixin",
     "LivingEntityMixin",
-    "PlayerEntityMixin"
+    "PlayerEntityMixin",
+    "compat.TrinketItemMixin"
   ],
   "client": [
   ],

@@ -2,6 +2,7 @@ package timefall.set_set_set.mixin;
 
 import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.Trinket;
+import dev.emi.trinkets.api.TrinketItem;
 import dev.emi.trinkets.api.TrinketsApi;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.util.Pair;
@@ -20,6 +21,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import timefall.set_set_set.util.SetSetsOfNonSets;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Mixin(LivingEntity.class)
@@ -37,8 +39,8 @@ public class LivingEntityMixin implements ISetWearingEntity {
 
         if (TrinketsApi.getTrinketComponent(livingEntity).isPresent())
             for (Pair<SlotReference, ItemStack> trinketPairs : TrinketsApi.getTrinketComponent(livingEntity).get().getAllEquipped()) {
-                Item trinketItem = trinketPairs.getRight().getItem();
-                if (trinketItem instanceof Trinket trinket) {
+                Item trinket = trinketPairs.getRight().getItem();
+                if (trinket instanceof TrinketItem trinketItem) {
 
                 }
             }
@@ -46,6 +48,9 @@ public class LivingEntityMixin implements ISetWearingEntity {
 
     @Unique
     HashMap<ArmorSet, Integer> armorSetContributionMap = new HashMap<>();
+
+    @Unique
+    HashMap<ArmorSet, Integer> armorSetTrinketContributionMap = new HashMap<>();
 
     @Override
     public HashMap<ArmorSet, Integer> getArmorSetContribution() {
@@ -58,6 +63,23 @@ public class LivingEntityMixin implements ISetWearingEntity {
         armorItems.forEach(itemStack -> {
             ArmorSet set = SetSetsOfNonSets.getArmorSet((ArmorItem) itemStack.getItem());
             this.armorSetContributionMap.put(set, this.armorSetContributionMap.getOrDefault(set, 0) + 1);
+        });
+    }
+
+    @Override
+    public HashMap<ArmorSet, Integer> getArmorSetTrinketContribution() {
+        return this.armorSetTrinketContributionMap;
+    }
+
+    @Override
+    public void setArmorSetContribution(List<Pair<SlotReference, ItemStack>> trinketPairs) {
+        this.armorSetTrinketContributionMap.forEach(((armorSet, integer) -> this.armorSetTrinketContributionMap.remove(armorSet)));
+        trinketPairs.forEach(slotReferenceItemStackPair -> {
+            ItemStack stack = slotReferenceItemStackPair.getRight();
+            if (stack.getItem() instanceof TrinketItem trinketItem) {
+                ArmorSet set = SetSetsOfNonSets.getArmorSet(trinketItem);
+                this.armorSetTrinketContributionMap.put(set, this.armorSetTrinketContributionMap.getOrDefault(set, 0) + 1);
+            }
         });
     }
 }

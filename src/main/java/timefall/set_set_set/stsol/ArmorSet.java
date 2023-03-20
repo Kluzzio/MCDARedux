@@ -1,5 +1,6 @@
 package timefall.set_set_set.stsol;
 
+import dev.emi.trinkets.api.TrinketItem;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.*;
@@ -8,13 +9,14 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 import timefall.set_set_set.util.SetSetsOfNonSets;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.EnumMap;
 
 public class ArmorSet extends EquipmentSet {
     private final ArmorMaterial armorMaterial;
     protected final EnumMap<EquipmentSlot, ArmorItem> armor = new EnumMap<>(EquipmentSlot.class);
-
+    protected final ArrayList<TrinketItem> trinkets = new ArrayList<>();
     private EquipmentSlot[] slots;
 
     private final ItemGroup group;
@@ -97,6 +99,10 @@ public class ArmorSet extends EquipmentSet {
 
     private String getNamespace() {
         return this.getIdentifier().getNamespace();
+    }
+
+    public ArrayList<TrinketItem> getTrinkets() {
+        return trinkets;
     }
 
     private String getName() {

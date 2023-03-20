@@ -1,8 +1,10 @@
 package timefall.set_set_set.util;
 
+import dev.emi.trinkets.api.TrinketItem;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import timefall.set_set_set.mixin.IArmorWithSet;
+import timefall.set_set_set.mixin.compat.ITrinketWithSet;
 import timefall.set_set_set.stsol.ArmorSet;
 
 public class SetSetsOfNonSets {
@@ -22,5 +24,13 @@ public class SetSetsOfNonSets {
 
     public static ArmorSet getArmorSet(ArmorItem armorItem) {
         return ((IArmorWithSet) armorItem).getSet_set_set_armor_set();
+    }
+
+    public static void setArmorSet(TrinketItem armorItem, ArmorSet set) {
+        ((ITrinketWithSet) armorItem).setSet_set_set_trinket_set(set);
+    }
+
+    public static ArmorSet getArmorSet(TrinketItem armorItem) {
+        return ((ITrinketWithSet) armorItem).getSet_set_set_trinket_set();
     }
 }
