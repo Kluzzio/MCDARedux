@@ -121,15 +121,15 @@ public class ArmorSet extends EquipmentSet {
     }
 
     public Text getTooltipFromContribution(int i) {
-        return getEFFECT_TOOLTIP().get(i);
+        return getEffectTooltip().get(i);
     }
 
-    public HashMap<Integer, Text> getEFFECT_TOOLTIP() {
+    public HashMap<Integer, Text> getEffectTooltip() {
         return this.EFFECT_TOOLTIP;
     }
 
     public ArmorSet setEffectToolTips(int threshold, String translationKey) {
-        getEFFECT_TOOLTIP().put(threshold, Text.translatable(translationKey));
+        getEffectTooltip().put(threshold, Text.translatable(translationKey));
         return this;
     }
 }

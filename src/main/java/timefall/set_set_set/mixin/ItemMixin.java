@@ -44,7 +44,7 @@ public class ItemMixin {
     private static void displaySetTooltip(List<Text> tooltip, ArmorSet armorSet) {
         if (MinecraftClient.getInstance().player != null) {
             int contribution = SetContribution.getArmorSetContribution(MinecraftClient.getInstance().player).getOrDefault(armorSet, 0);
-            for (int value : armorSet.getEFFECT_TOOLTIP().keySet()) {
+            for (int value : armorSet.getEffectTooltip().keySet()) {
                 tooltip.add(Text.literal("(" + value + "/" + armorSet.getMaxContribution() + "): ")
                         .append(armorSet.getTooltipFromContribution(value))
                         .formatted(value <= contribution ? Formatting.ITALIC : Formatting.GRAY));
